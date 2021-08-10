@@ -1,0 +1,23 @@
+{
+  "customerUserName": "nanda@gmail.com",
+  "orderDate": "07-Aug-2021",
+  "paymentMode": "UPI",
+  "shippingAddress": "No. 153/11b, solai alagu puram,Madurai - 625 011",
+  "orderedItems": [{
+    "quantity": 1,
+    "productId": 178,
+    "productName": "Handwash",
+    "productPrice": 500
+  },
+    {
+      "quantity": 2,
+      "productId": 192,
+      "productName": "Organic Shampoo",
+      "productPrice": 100
+    }
+  ],
+  "itemsTotalPrice": 600,
+  "packingCost": 100,
+  "tax": 30,
+  "total": 730
+}

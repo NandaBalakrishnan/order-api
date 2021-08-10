@@ -1,0 +1,53 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.comp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	all {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+	}
+
+}
+apply {
+	plugin("org.springframework.boot")
+	plugin("io.spring.dependency-management")
+}
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-configuration-processor:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	implementation 'io.jsonwebtoken:jjwt:0.9.0'
+	implementation 'org.json:json:20160810'
+	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.12.4'
+	implementation 'org.springframework.kafka:spring-kafka:2.7.3'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
+	testCompileOnly 'org.mockito:mockito-all:1.10.19'
+	testCompileOnly 'junit:junit:4.13.2'
+	testImplementation 'io.projectreactor:reactor-test:3.4.8'
+	testImplementation 'org.springframework.kafka:spring-kafka-test:2.7.3'
+}
+
+test {
+	useJUnitPlatform()
+}
